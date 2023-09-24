@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Pagina de descarga</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="archivos/estrella.png">
+        <link rel="stylesheet" href="css/estilos.css"/>
+        
+    </head>
+
+    <body>
+        <div class="contenido">
+            <h1>¡HOLA!👋🏻😊 GRACIAS POR ELIGIRNOS</h1>
+            <h2>👀 Pasa el mouse por el botón de Luz Neón y dale click en descargar el archivo que desees, 💪🏻 es opcional descargar el manual </h2>
+            <br><br><br>
+            <div class="contenedor">
+
+
+                <div class="card">
+                    <h3> </h3>
+
+                    <a href="archivos/AC-SISTEMA WEB PARA EL CONTROL.pdf" download="ARTICULO DE UN SISTEMA WEB PARA EL CONTROL" class="btn-neon">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        
+                    </a>
+
+                </div>
+
+                <div class="card">
+                    <h3>  </h3>
+
+                    <a href="archivos/SD_49522_NetBeans_Grupo 6_Rosmery Fabián.pptx" download="Rosmery Fabian Grupo6 Ant-Maven-Gradle" class="btn-neon">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        
+                    </a>
+
+                </div>
+
+
+
+                <div class="card">
+                    <h3> </h3>
+
+                    <a href="archivos/paisaje.jpg" download="Picture PAISAJE" class="btn-neon">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        
+                    </a>
+
+                </div>
+
+                <div class="card">
+                    <h3> MANUAL DE USO</h3>
+
+                    <a href="archivos/computadora-gamer.png" download="Computadora Gamer" class="btn-neon">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        Descargar Manual
+                    </a>
+
+                </div>
+
+
+
+                <div class="card">
+                    <h3>APLICACIÓN</h3>
+
+                    <a href="archivos/Alan Walker & Ava Max - Alone, Pt. II.mp3" download="Musica ALONE Alan Walker y Ava Max" class="btn-neon">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        Descargar App
+                    </a>
+
+                </div>
+
+                <div class="card">
+                    <h3>CODIGO DEL CLIENTE</h3>
+
+                    <a href="#" download="Codigo" class="btn-neon" id="btn-descarga">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        Descargar codigo
+                      </a>
+                      
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <script>
+            // Selección del botón de descarga
+            const btnDescarga = document.querySelector('#btn-descarga');
+          
+            // Función que genera un código aleatorio
+            function generarCodigo() {
+              let codigo = '';
+              const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          
+              for (let i = 0; i < 10; i++) {
+                codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+              }
+          
+              return codigo;
+            }
+          
+            // Función que descarga el archivo de nota
+            function descargarArchivo() {
+              // Generación del código aleatorio
+              const codigo = generarCodigo();
+          
+              // Creación del contenido del archivo de nota
+              const contenidoNota = `Tu código de descarga es: "${codigo}", Este es el codigo que ocupan cuando solicitan atencion al cliente o ayuda tecnica`;
+          
+              // Creación del objeto Blob con el contenido del archivo de nota
+              const blob = new Blob([contenidoNota], { type: 'text/plain' });
+          
+              // Creación del objeto URL del Blob
+              const urlBlob = URL.createObjectURL(blob);
+          
+              // Descarga del archivo de nota
+              const enlaceDescarga = document.createElement('a');
+              enlaceDescarga.href = urlBlob;
+              enlaceDescarga.download = 'nota y codigo.txt';
+              enlaceDescarga.click();
+          
+              // Liberación de la URL del Blob
+              URL.revokeObjectURL(urlBlob);
+            }
+          
+            // Evento click del botón de descarga
+            btnDescarga.addEventListener('click', descargarArchivo);
+          </script>
+          
+
+    </body>
+</html>

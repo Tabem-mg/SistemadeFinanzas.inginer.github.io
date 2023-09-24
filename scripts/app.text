@@ -1,0 +1,16 @@
+$(document).ready(function() {
+  // Mostrar la animación de carga
+  $('#overlay').fadeIn(600);
+  
+  // Esperar 1 minuto y desvanecer la animación de carga
+  setTimeout(function() {
+    $('#overlay').fadeOut(500);
+  }, 18000);
+  
+  // Desvanecer la animación de carga y el fondo gris cuando la página esté completamente cargada
+  $(window).on('load', function() {
+    $('#loader').fadeOut(700);
+    $('#overlay').fadeOut(700);
+  });
+});
+
